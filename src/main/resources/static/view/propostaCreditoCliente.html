@@ -1,0 +1,69 @@
+<meta charset="UTF-8"/>
+<div>
+	<div class="card">
+		<div class="card-header"><i class="fa fa-fw fa-users"></i> <strong>Pesquisa Propóstas de Crédito de Clientes</strong> <a href="/adicionar-proposta" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-plus-circle"></i> Adicionar Propósta</a></div>
+		<div class="card-body">
+			<div class="col-sm-12">
+				<h5 class="card-title"><i class="fa fa-fw fa-search"></i> Pesquisar Propósta</h5>
+				<form name="frmSearch">
+					<div class="row">
+			            <div class="col-sm-5">
+			                <div class="form-group">
+			                    <label>Nome</label>
+			                    <input type="text" name="searchNome" ng-model="proposta.nome" class="form-control" placeholder="Digite nome">
+			                </div>
+			            </div>
+			            <div class="col-sm-5">
+			                <div class="form-group">
+			                    <label>CPF</label>
+			                    <input type="text" name="searchCpf" ng-model="proposta.cpf" class="form-control" placeholder="Digite CPF">
+			                </div>
+			            </div>
+			            <div class="col-sm" style="text-align: right;">
+			                <div class="form-group">
+			                    <label> </label>
+			                    <div><button type="button" id="btnSearch" ng-click="buscarProposta(proposta)" class="btn btn-dark btn-sm"><span class="fa fa-fw fa-search"></span> Pesquisar</button></div>
+			                </div>
+			            </div>
+			        </div>			        
+				</form>
+			</div>
+		</div>
+	</div>
+	<hr>	
+	<span class="text" ng-show="propostas != 0" ><h6>Total de Propóstas: {{propostas.length}}</h6	></span>
+	<span class="text-danger" ng-show="propostas == 0" ><h6>Não há registros.</h6></span>
+	<table class="table table-striped table-bordered table--hoverRow table--responsive" id="table-proposta">
+	  <thead class="thead-dark">
+	    <tr>
+	      <th scope="col" width="15%">Nome</th>
+	      <th scope="col">CPF</th>
+	      <th scope="col">Idade</th>
+	      <th scope="col">Sexo</th>
+	      <th scope="col">Estado Civil</th>
+	      <th scope="col">UF</th>
+	      <th scope="col">Dependentes</th>
+	      <th scope="col">Renda R$</th>
+	      <th scope="col" width="5%">Resultado Análise</th>
+	      <th scope="col" width="10%">Limite</th>
+	      <th scope="col">Action</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr ng-repeat="proposta in propostas">
+	      <th scope="row">{{proposta.nome}}</th>
+	      <td>{{proposta.cpf}}</td>
+	      <td>{{proposta.idade}}</td>
+	      <td>{{proposta.sexo}}</td>
+	      <td>{{proposta.estadoCivil}}</td>
+	      <td>{{proposta.uf}}</td>
+	      <td>{{proposta.dependentes}}</td>
+	      <td>{{proposta.renda}}</td>
+	      <th scope="row">{{proposta.resultadoAnalise}}</th>
+	      <td>{{proposta.limite}}</td>
+	      <td><button id="btnRemoveProposta" class="btn btn-md btn-rounded buttonDelete waves-effect waves-light" title="Excluir Propósta {{proposta.id}}" ng-click="excluirProposta(proposta)" style="cursor:pointer;"><span class="fas fa-trash"></span></button></td>
+	    </tr>
+	    
+	  </tbody>
+	</table>
+</div>

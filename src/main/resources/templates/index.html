@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app="propostaCredito">
+	<head>
+		<base href="/" />
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Análise de Propósta de Crédito</title>
+		<script src="./js/lib/jquery-3.2.1.js"></script>
+		<script src="./js/lib/angular.min.js"></script>
+		<script src="./js/lib/angular-route.js"></script>
+		<script src="./js/lib/bootstrap.js"></script>
+		<script src="./js/app.js"></script>
+		<script src="./js/controller/main-controller.js"></script>
+		<script src="./js/controller/proposta-credito-cliente-controller.js"></script>
+		<link href="./css/bootstrap.css" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
+		
+		<style>
+		    body {
+		        padding-top: 10px;
+		        padding-bottom: 20px;
+		    }
+		    .container {
+		    	width: 75%;
+		    }
+		    .table {
+		    	font-size: 12px;
+		    }
+		    .fas {font-family: FontAwesome !important;}
+		    .fa-times {font-family: FontAwesome !important;}
+		    #table-proposta {
+		    	text-align: center;
+		    }
+		    #divAddProposta {
+		    	width: 70%;
+		    }
+		</style>		    
+	</head>
+	<body ng-controller="mainController" class="container">
+	
+		<div>
+			Path: {{$location.path()}}	|	
+			Template URL: {{$route.current.templateUrl}}		
+			<br>
+			<h6>
+				<a href="/" class="link"><i class="fa fa-fw fa-home"></i> Home</a> | 
+				<a href="/proposta-credito-cliente" class="link"><i class="fa fa-fw fa-user"></i> Propósta de Crédito ao Cliente</a>
+			</h6> 
+			<br>
+		</div>
+		
+		<div ng-view="ng-view">
+		
+		</div>
+	
+	</body>
+</html>

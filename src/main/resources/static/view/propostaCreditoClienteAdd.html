@@ -1,0 +1,105 @@
+<meta charset="UTF-8"/>
+<div class="card" id="divAddProposta">
+	<div class="card-header"><i class="fa fa-fw fa-user"></i> <strong>Adicionar Propósta</strong></div>
+	<div class="card-body">
+		<form name="frmProposta" class="form">
+			<div class="row">
+			    <div class="col-sm-12">
+				    <div class="form-group">
+				        <label>Nome <span class="text-danger">*</span></label>
+				        <input type="text" name="nome" ng-model="proposta.nome" class="form-control" placeholder="Digite seu nome" required>
+				    </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+				    <div class="form-group">
+				        <label>CPF <span class="text-danger">*</span></label>
+				        <input type="text" name="cpf" ng-model="proposta.cpf" class="form-control" placeholder="Digite seu CPF" required>
+				    </div>
+			    </div>
+			    <div class="col-sm-6">
+				    <div class="form-group">
+				        <label>Idade <span class="text-danger">*</span></label>
+				        <input type="text" name="idade" ng-model="proposta.idade" class="form-control" placeholder="Digite sua idade" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+				    </div>
+			    </div>
+			    
+		    </div>
+		    <div class="row">
+			    <div class="col-md-3">
+				    <div class="form-group">
+				    	<label>Sexo <span class="text-danger">*</span></label>
+				        <select name="sexo" ng-model="proposta.sexo" required>
+					    	<option value="M" selected="selected">Masculino</option>
+					      	<option value="F">Feminino</option>
+					    </select>
+					</div>
+				</div>
+				<div class="col-md-3">
+			    	<div class="form-group">
+				    	<label>Estado civil <span class="text-danger">*</span></label>
+				        <select name="estadoCivil" ng-model="proposta.estadoCivil" required>
+					    	<option value="Solteiro(a)" selected="selected">Solteiro(a)</option>
+					      	<option value="Casado(a)">Casado(a)</option>
+					      	<option value="Divorciado(a)">Divorciado(a)</option>
+					      	<option value="Viuvo(a)">Viúvo(a)</option>
+					    </select>
+				    </div>
+			    </div>
+			    <div class="col-md-2">
+				    <div class="form-group">				    
+				    	<label>UF <span class="text-danger">*</span></label>
+				        <select name="uf" ng-model="proposta.uf" required>
+					    	<option value="AC" selected="selected">AC</option>			    	
+					      	<option value="AL">AL</option>
+					      	<option value="AM">AM</option>
+					      	<option value="AP">AP</option>
+					      	<option value="BA">BA</option>
+					      	<option value="CE">CE</option>
+					      	<option value="DF">DF</option>
+					      	<option value="ES">ES</option>
+					      	<option value="GO">GO</option>
+					      	<option value="MA">MA</option>
+					      	<option value="MG">MG</option>
+					      	<option value="MS">MS</option>
+					      	<option value="MT">MT</option>
+					      	<option value="PA">PA</option>
+					      	<option value="PB">PB</option>
+					      	<option value="PE">PE</option>
+					      	<option value="PI">PI</option>
+					      	<option value="PR">PR</option>
+					      	<option value="RJ">RJ</option>
+					      	<option value="RN">RN</option>
+					      	<option value="RO">RO</option>
+					      	<option value="RR">RR</option>
+					      	<option value="RS">RS</option>
+					      	<option value="SC">SC</option>
+					      	<option value="SE">SE</option>
+					      	<option value="SP">SP</option>
+					      	<option value="TO">TO</option>
+					    </select>
+				    </div>
+			    </div>
+		    </div>
+		    <div class="row">
+			    <div class="col-sm-6">
+				    <div class="form-group">
+				        <label>Dependentes <span class="text-danger">*</span></label>
+				        <input type="text" name="dependentes" ng-model="proposta.dependentes" class="form-control" placeholder="Digite o número de dependentes" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+				    </div>
+			    </div>
+			    <div class="col-sm-6">
+				    <div class="form-group">
+				        <label>Renda <span class="text-danger">*</span></label>
+				        <input type="text" name="renda" ng-model="proposta.renda" class="form-control" placeholder="Digite sua renda" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+				    </div>
+			    </div>
+		    </div>
+		    <div class="form-group">
+		        <button type="button" value="Confirm" ng-click="adicionarPropostaCredito()" ng-disabled="frmProposta.$invalid" class="btn btn-primary"><i class="fa fa-fw fa-plus-circle"></i> Confirmar</button>
+		        <a href="/proposta-credito-cliente" class="float-right btn btn-danger btn-rounded buttonCancel waves-effect waves-light"><i class="fa fa-fw fa-times-circle" ></i> Cancelar</a>
+		    </div>
+		</form>
+	</div>
+</div>
